@@ -1,4 +1,107 @@
 'use strict';
+
+// Guess My Number!!
+
+// Dom part
+const body = document.querySelector('body');
+const againBtn = document.querySelector(".again")
+const InputBtn = document.querySelector(".check")
+const guess = document.querySelector(".guess")
+const message = document.querySelector(".message")
+const secret = document.querySelector(".number")
+const score = document.querySelector(".score")
+const high = document.querySelector(".highscore")
+
+// event handlers for the again
+againBtn.addEventListener ('click', againBtnClick)
+
+function againBtnClick(){
+    score.textContent = '20'
+    secret.textContent = '?'
+    body.style.backgroundColor = "#222";
+    secret.style.width = '15rem';
+    message.textContent = "Start guessing..."
+    guess.value = ''
+    
+
+
+}
+
+    // creating a MathRandom method for secret numbers
+    const secretNumber = Math.trunc(Math.random()* 20) + 1;
+
+    // // Adding math method to the dom
+    // secret.textContent = secretNumber
+
+
+
+    //  score section
+
+    let scoreSection = 20
+    let highScore = 0
+   // highscore section
+    if(scoreSection > highScore){
+        highScore = scoreSection
+        high.textContent = highScore
+    }
+
+    // creating click event for the input element
+    InputBtn.addEventListener("click",checkNubers)
+
+    function checkNubers(){
+    let inputValue = Number(guess.value )
+
+    // console.log(typeof(inputValue));
+    if (!inputValue){
+
+    message.textContent = '⛔️ No Number'
+    } else if (inputValue === secretNumber) {
+
+    message.textContent = "🍭 Congratulations"
+
+    //   secrect number
+    secret.textContent = secretNumber
+    body.style.backgroundColor = "#60b347";
+
+    }else if (inputValue !== secretNumber){
+         if(scoreSection > 1) {
+    message.textContent = inputValue > secretNumber ? "📈 Too High" : "📉 Too Low"
+    scoreSection--
+    score.textContent = scoreSection
+    }else{
+    message.textContent = "❤️‍🔥 You lost the game"
+    score.textContent = 0
+    body.style.backgroundColor = "#df1515";
+    }
+    }
+//   }else if (inputValue > secretNumber) {
+//     if(scoreSection > 1) {
+//     message.textContent = "📈 Too High"
+//     scoreSection--
+//     score.textContent = scoreSection
+//     }else{
+//     message.textContent = "❤️‍🔥 You lost the game"
+//     score.textContent = 0
+//     body.style.backgroundColor = "#df1515";
+//     }
+
+    
+
+    // }else if (inputValue < secretNumber) {
+    // if (scoreSection > 1) {
+    // message.textContent = "📉 Too Low"
+    // scoreSection--
+    // score.textContent = scoreSection
+    // }else{
+    // message.textContent = "❤️‍🔥 You lost the game"
+    // score.textContent = 0
+    // }
+    // }
+
+    }
+
+
+
 // Developer challenge
 
 // Understand the right Question

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -12,10 +12,10 @@ html {
 }
 
 body {
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: #eee;
   background-color: #222;
-  /* background-color: #60b347; */
+  /* background-color: #df1515; */
 }
 
 /* LAYOUT */
@@ -93,6 +93,7 @@ h1 {
   text-align: center;
   display: block;
   margin-bottom: 3rem;
+
 }
 
 .btn {
