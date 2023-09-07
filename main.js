@@ -37,7 +37,7 @@ function againBtnClick(){
 
     //  score section
 
-    let scoreSection = 20
+    let scoreSection = 0
     let highScore = 0
    // highscore section
     if(scoreSection > highScore){
